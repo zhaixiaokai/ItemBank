@@ -1,0 +1,11 @@
+			{
+    			text:'root',
+    			expanded:true,
+    			children:[{
+    				text:'jiedian1',
+    				leaf:true
+    			},{
+    				text:'jiedian2',
+    				leaf:true	
+    			}]
+    		}

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="json" extends="json-default" namespace="/">
+	
+		<!-- 添加分类体系 -->
+		<action name="SortAddAction" class="SortAction" method="SortAdd">
+           <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 删除分类体系 -->
+		<action name="SortDeleteAction" class="SortAction" method="SortDelete">
+           <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 批量删除分类体系 -->
+		<action name="SortBulkDeleteAction" class="SortAction" method="SortBulkDelete">
+           <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 分类体系管理获取表格数据 -->
+		<action name="SortSystemManageAction" class="TableDataAction" method="SortSystemManage">
+		</action>
+		
+		<!-- 分类体系修改 -->
+		<action name="SortModifyAction" class="SortAction" method="SortModify">
+		 <result name="message" type="json"></result>
+		</action>
+		
+		
+		<!-- 分类管理分类体系选择 -->
+		<action name="SortSelectAction" class="SortAction" method="SortSelect">
+		</action>
+		
+		
+		<!-- 分类管理分类体系ID获取 -->
+		<action name="GetSortIdAction" class="SortAction" method="GetSortId">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		
+		<!-- 分类管理生成树数据获取 -->
+		<action name="SortManageDataSourceAction" class="SortAction" method="SortManageDataSource">
+		</action>
+		
+		
+		<!-- 分类体系树管理，判断节点是否为根节点 -->
+		<action name="sortTreeOperateActionIfRootIdAction" class="SortAction" method="sortTreeOperateActionIfRootId">
+		</action>
+		
+		
+		
+		<!-- 分类体系配置 -->
+		<action name="SortConfigAction" class="ExamSystemManageAction" method="SortConfig">
+		</action>
+		
+		<!-- 创建试题库分类体系配置 -->
+		<action name="addEsSortConfigAction" class="ExamSystemManageAction" method="addEsSortConfig">
+		</action>
+		
+		<!-- 创建试题库试题库用途配置 -->
+		<action name="UseConfigAction" class="ExamSystemManageAction" method="UseConfig">
+		</action>
+		
+		<!-- 创建试题库信息入库 -->
+		<action name="ExamSystemAddAction" class="ExamSystemManageAction" method="ExamSystemAdd">
+			  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库管理表格数据 -->
+		<action name="ExamSystemManageAction" class="TableDataAction" method="ExamSystemManage">
+		</action>
+		
+		<!-- 删除试题库，单条数据 -->
+		<action name="ExamSystemDeleteAction" class="ExamSystemManageAction" method="ExamSystemDelete">
+			  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 批量试题库 -->
+		<action name="ExamSystemBulkDeleteAction" class="ExamSystemManageAction" method="ExamSystemBulkDelete">
+			  <result name="message" type="json"></result>
+		</action>
+		
+		<!--修改试题库，试题库分类配置信息获取 -->
+		<action name="ExamSystemSortConfigAction" class="ExamSystemManageAction" method="ExamSystemSortConfig">
+			  <result name="message" type="json"></result>
+		</action>
+		
+		<!--修改试题库，试题库分类配置分类体系列表 -->
+		<action name="ModifySortConfigAction" class="ExamSystemManageAction" method="ModifySortConfig">
+			  <result name="message" type="json"></result>
+		</action>
+		
+		<!--修改试题库，试题库信息保存 -->
+		<action name="ExamSystemModifyAction" class="ExamSystemManageAction" method="ExamSystemModify">
+			  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 根据条件查询试题库表格数据 -->
+		<action name="ReferDataSourceAction" class="TableDataAction" method="ReferDataSource">
+		</action>
+		
+		<!-- 试题库授权按角色授权获取角色-->
+		<action name="GetRoleDataAction" class="ExamSystemManageAction" method="GetRoleData">
+		</action>
+		
+		<!-- 试题库授权按角色授权获取试题库数据，未选课程 -->
+		<action name="GetItembankBymajorAction" class="ExamSystemManageAction" method="GetItembankBymajor">
+		</action>
+		
+		<!-- 试题库授权按角色授权根据课程id获取课程name,未选课程-->
+		<action name="GetCurseNameBymajorAction" class="ExamSystemManageAction" method="GetCurseNameBymajor">
+		</action>
+		
+		<!-- 试题库授权按角色授权根据课程id获取课程name，选择课程-->
+		<action name="GetCurseNameBycurseAction" class="ExamSystemManageAction" method="GetCurseNameBycurse">
+		</action>
+		
+		<!-- 试题库授权按角色授权根据课程id获取试题库信息，选择课程-->
+		<action name="GetItembankBycurseAction" class="ExamSystemManageAction" method="GetItembankBycurse">
+		</action>
+		
+		<!-- 试题库授权按角色授权,查询某角色成员权限-->
+		<action name="GetAuthorizedItembankByroleAction" class="ExamSystemManageAction" method="GetAuthorizedItembankByrole">
+		</action>
+		
+		<!-- 试题库授权按角色授权,保存配置-->
+		<action name="SaveAuthorityConfigByroleSelectnonecourseAction" class="ExamSystemManageAction" method="SaveAuthorityConfigByroleSelectnonecourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库授权按角色授权,保存配置-->
+		<action name="SaveAuthorityConfigByroleSelectcourseAction" class="ExamSystemManageAction" method="SaveAuthorityConfigByroleSelectcourse">
+		 <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库授权按用户授权,判断教工号或学号是否输入正确-->
+		<action name="CheckNumberAction" class="ExamSystemManageAction" method="CheckNumber">
+		</action>
+		
+		<!-- 试题库授权按用户授权,查询某用户权限-->
+		<action name="GetAuthorizedItembankByuserAction" class="ExamSystemManageAction" method="GetAuthorizedItembankByuser">
+		</action>
+		
+		<!-- 试题库授权按用户授权,保存配置，未选课程-->
+		<action name="SaveAuthorityConfigByuserSelectnonecourseAction" class="ExamSystemManageAction" method="SaveAuthorityConfigByuserSelectnonecourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库授权按用户授权,保存配置，选择课程-->
+		<action name="SaveAuthorityConfigByuserSelectcourseAction" class="ExamSystemManageAction" method="SaveAuthorityConfigByuserSelectcourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库授权按成员类型授权,查询成员类型权限-->
+		<action name="GetAuthorizedItembankBymembertypeAction" class="ExamSystemManageAction" method="GetAuthorizedItembankBymembertype">
+		</action>
+		
+		<!-- 试题库授权按成员类型授权,保存配置,未选课程-->
+		<action name="SaveAuthorityConfigBymembertypeSelectnonecourseAction" class="ExamSystemManageAction" method="SaveAuthorityConfigBymembertypeSelectnonecourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库授权按成员类型授权,保存配置,选择课程-->
+		<action name="SaveAuthorityConfigBymembertypeSelectcourseAction" class="ExamSystemManageAction" method="SaveAuthorityConfigBymembertypeSelectcourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		
+		<!-- 试题库授权按教学班级授权,根据课程查询教学班级-->
+		<action name="GetTeachingClassAction" class="ExamSystemManageAction" method="GetTeachingClass">
+		</action>
+		
+		<!-- 试题库授权按教学班级授权,获得查询机构列表-->
+		<action name="ReferSchoolStructureOptionsGetAction" class="ExamSystemManageAction" method="ReferSchoolStructureOptionsGet">
+		</action>
+		
+		<!-- 试题库授权按教学班级授权,获得查询课程列表-->
+		<action name="ReferCurseSelectBySpecialFieldAction" class="ExamSystemManageAction" method="ReferCurseSelectBySpecialField">
+		</action>
+		
+		<!-- 试题库授权按教学班级授权,查询班级权限-->
+		<action name="GetAuthorizedItembankByteachingclassAction" class="ExamSystemManageAction" method="GetAuthorizedItembankByteachingclass">
+		</action>
+		
+		<!-- 试题库授权按班级授权,保存配置，未选课程-->
+		<action name="SaveAuthorityConfigByteachingclassSelectnoneclassAction" class="ExamSystemManageAction" method="SaveAuthorityConfigByteachingclassSelectnoneclass">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库授权按班级授权,保存配置，已选课程-->
+		<action name="SaveAuthorityConfigByteachingclassSelectclassAction" class="ExamSystemManageAction" method="SaveAuthorityConfigByteachingclassSelectclass">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库授权按组织机构授权,获取机构列表-->
+		<action name="GetSchoolStructureAction" class="ExamSystemManageAction" method="GetSchoolStructure">
+		</action>
+		
+		<!-- 试题库授权按机构授权,查询权限-->
+		<action name="GetAuthorizedItembankBydepartmentAction" class="ExamSystemManageAction" method="GetAuthorizedItembankBydepartment">
+		</action>
+		
+		<!-- 试题库查询，判断节点是否在分类体系下-->
+		<action name="ReferIfDefaultsortAction" class="ExamSystemManageAction" method="ReferIfDefaultsort">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库查询，判断节点是否为为根节点-->
+		<action name="ReferIfRootnodeAction" class="ExamSystemManageAction" method="ReferIfRootnode">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库授权按机构授权,保存配置-->
+		<action name="SaveAuthorityConfigBydepartmentSelectnonecourseAction" class="ExamSystemManageAction" method="SaveAuthorityConfigBydepartmentSelectnonecourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试题库授权按机构授权,保存配置-->
+		<action name="SaveAuthorityConfigBydepartmentSelectcourseAction" class="ExamSystemManageAction" method="SaveAuthorityConfigBydepartmentSelectcourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 在线添加试题，获取知识点-->
+		<action name="GetPointDataAction" class="QuesManageAction" method="GetPointData">
+		</action>
+		
+		<!-- 在线添加试题，试题验证-->
+		<action name="QuestionCheckValidationAction" class="QuesManageAction" method="QuestionCheckValidation">
+		<param name="savePath">/pages/examM</param>
+		<!-- 	<result name="message" type="json"></result> -->
+		</action>
+		
+		<!-- 导入试题，试题文件上传-->
+		<action name="ImportQuesAction" class="QuesManageAction" method="ImportQues">
+		<param name="savePath">/pages/examM</param>
+		</action>
+		
+		<!-- 导入试题，试题解析，计算试题数量-->
+		<action name="QuesNumberAction" class="QuesManageAction" method="QuesNumber">
+		<param name="savePath">/pages/examM</param>
+		</action>
+		
+		<!--试题解析，显示试题内容-->
+		<action name="ShowQuesContentAction" class="QuesManageAction" method="ShowQuesContent">
+		<param name="savePath">/pages/examM</param>
+		</action>
+		
+		<!--试题解析，显示试题内容-->
+		<!-- <action name="DeleteQuesHtmlAction" class="QuesManageAction" method="DeleteQuesHtml">
+		<param name="savePath">/pages/examM</param>
+		</action> -->
+		
+		<!--导入试题，试题保存-->
+		<action name="SaveImportQuesAction" class="QuesManageAction" method="SaveImportQues">
+		<param name="savePath">/pages/examM</param>
+		</action>
+		
+		<!--查看试题，获取试题难度等级option-->
+		<action name="GetQuesDifficultyOptionAction" class="QuesManageAction" method="GetQuesDifficultyOption">
+		</action>
+		
+		<!--查看试题，获取试题表格数据-->
+		<action name="QuesViewTableSourceAction" class="TableDataAction" method="QuesViewTableSource">
+		</action>
+		
+		<!--查看试题，由试题库id查找课程id-->
+		<action name="GetCurseIdAction" class="QuesManageAction" method="GetCurseId">
+		</action>
+		
+		<!--查看试题，查看试题内容-->
+		<action name="QuesContentAction" class="QuesManageAction" method="QuesContent">
+			<param name="savePath">/pages/examM</param>
+		</action>
+		<!--查看试题，查看试题内容-->
+		<action name="QuesContentAction2" class="QuesManageAction" method="QuesContent">
+			<param name="savePath">/pages/appManage</param>
+		</action>
+		<!--查看试题，根据查询条件显示表格-->
+		<action name="ReferResult_QuesViewTableSourceAction" class="TableDataAction" method="ReferResult_QuesViewTableSource">
+		</action>
+		
+		<!--试题管理，获取难度系数-->
+		<action name="QuesManageGetDiffAction" class="QuesManageAction" method="QuesManageGetDiff">
+		</action>
+		
+		<!--试题管理，试题基本信息修改保存-->
+		<action name="ModifyQuesSaveAction" class="QuesManageAction" method="ModifyQuesSave">
+		</action>
+		
+		<!--试题管理，试题内容修改，获取试题内容-->
+		<action name="QuesManageGetQuesContentAction" class="QuesManageAction" method="QuesManageGetQuesContent">
+					<param name="savePath">/pages/examM</param>
+		
+		</action>
+		
+		<!--试题管理，试题内容修改，保存试题内容-->
+		<action name="QuestionContentSaveAction" class="QuestionAction" method="QuestionContentSave">
+			<param name="savePath">/pages/examM</param>
+		
+		</action>
+		
+		<!--试题管理，删除试题-->
+		<action name="QuesManageDeleteQuesAction" class="QuesManageAction" method="QuesManageDeleteQues">
+		
+		</action>
+		
+		<!--试题管理，批量删除试题-->
+		<action name="QuesManageBulkDeleteQuesAction" class="QuesManageAction" method="QuesManageBulkDeleteQues">
+		</action>
+		
+		<!--试题迁移-->
+		<action name="QueswMoveSaveAction" class="QuesManageAction" method="QueswMoveSave">
+		</action>
+		
+			<!--试题导出-->
+		<action name="QuesOutputAction" class="QuesManageAction" method="QuesOutput">
+		<param name="savePath">/pages/examM</param>
+		</action>
+		
+    </package>
+</struts>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+	  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<bean id="BeanLoader" class="net.ib.common.BeanLoader"/>
+	 
+    <!-- 配置Proxool数据连接池 -->
+    <bean id="DataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	    <property name="driverClassName">
+	        <value>org.logicalcobwebs.proxool.ProxoolDriver</value>
+	    </property>
+	    <property name="url">
+	        <value>proxool.Pool_dbname</value>
+	    </property>
+	</bean>
+	 
+    <!--  Spring的JdbcTemplate -->
+	<bean id="JdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="DataSource"/>
+    </bean>
+	
+	<!-- 定义一个业务逻辑组件，实现类为MyServiceImp -->
+	<bean id="testService" class="net.ib.util.service.impl.TestServiceImp" >
+		<property name="dataSource" ref="DataSource"/>
+	</bean>
+	<!-- 定义操作树业务逻辑组件，实现类为TreeOperateImpl -->
+	<bean id="treeOperateService" class="net.ib.util.service.impl.TreeOperateImpl" >
+	</bean>	
+
+	<!-- 让Spring管理的Action实例 -->
+	<!-- 定义登录action -->
+
+	<!-- 定义添加课程action -->	
+	<bean id="addSubAction" class="net.ib.util.action.addSubAction" scope="prototype">
+	<!--管理添加课程类  -->
+	</bean>
+	
+	<bean id="Dao" class="net.ib.util.dao.DaoImpl">
+		<!-- 定义Dao -->
+	</bean>
+	<!-- 加载 ehcache 配置信息 -->  
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">  
+		<property name="configLocation">
+			<value>classpath:ehcache.xml</value>
+		</property>  
+	</bean>
+	<!-- 文件管理service的Bean -->
+	<bean id="FileService" class="net.ib.util.service.impl.FileServiceImpl">
+	</bean>
+</beans>

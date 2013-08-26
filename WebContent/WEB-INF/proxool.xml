@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxool-config>
+	<proxool>
+		<alias>Pool_dbname</alias>
+		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+		<driver-url>jdbc:oracle:thin:@127.0.0.1:1521:ORCL</driver-url>
+		<driver-properties>
+			<property name="user" value="ItemBank"/>
+			<property name="password" value="12345789"/>
+		</driver-properties>
+		<house-keeping-sleep-time>900000</house-keeping-sleep-time>
+		<maximum-connection-count>100</maximum-connection-count>
+		<minimum-connection-count>20</minimum-connection-count>
+		<prototype-count>0</prototype-count>
+		<simultaneous-build-throttle>100</simultaneous-build-throttle>
+		<house-keeping-test-sql>select CURRENT_DATE from dual</house-keeping-test-sql>
+		<statistics>15s,10m,1d</statistics>
+		<statistics-log-level>INFO</statistics-log-level>
+	</proxool>
+</proxool-config>

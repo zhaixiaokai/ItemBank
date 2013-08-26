@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="sturts.i18n.encoding" value="UTF-8" /> 
+
+	<package name="json-kjp" extends="json-default" namespace="/">
+	<!-- 创建试卷库信息入库 -->
+		<action name="PaperAddAction"     class="ExamPaperDBAction"    method="PaperAdd">
+			 <result name="message1"    type="json"></result>  
+		</action>
+		<!-- 试卷库管理表格数据 -->
+		<action name="EPDBManageAction" class="TableDataAction" method="EPDBManage">
+		</action>
+	
+		<!-- 根据条件查询试卷库表格数据 -->
+		<action name="ReferEPDBAction" class="TableDataAction" method="ReferEPDB">
+		</action>
+		<!-- 根据条件查询试卷数据 -->
+		<action name="ReferExamPaperAction" class="TableDataAction" method="ReferExamPaper">
+		</action>
+		<!-- 试卷库授权按角色授权,查询某角色成员权限-->
+		<action name="GetAuthorizedEPDBByroleAction" class="ExamPaperDBAction" method="GetAuthorizedEPDBByrole">
+		</action>
+		
+		<!-- 试卷库授权按角色授权,未选择课程，保存配置-->
+		<action name="SaveEPDBAuthorityConfigByroleSelectnonecourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigByroleSelectnonecourse">
+		  <result name="message" type="json"></result>
+		</action>
+		<!-- 试卷库授权按角色授权,选择课程,保存配置-->
+		<action name="SaveEPDBAuthorityConfigByroleSelectcourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigByroleSelectcourse">
+		  <result name="message" type="json"></result>
+		</action>
+		<!-- 试卷库授权按角色授权获取试卷库数据，未选课程 -->
+		<action name="GetEPDBBymajorAction" class="ExamPaperDBAction" method="GetEPDBBymajor">
+		</action>
+		<!-- 试卷库授权按角色授权根据课程id获取试卷库信息，选择课程-->
+		<action name="GetEPDBBycurseAction" class="ExamPaperDBAction" method="GetEPDBBycurse">
+		</action>
+		
+		
+		
+		<!-- 试卷库授权按用户授权,查询某用户成员权限-->
+		<action name="GetAuthorizedEPDBByuserAction" class="ExamPaperDBAction" method="GetAuthorizedEPDBByuser">
+		</action>
+		<!-- 试卷库授权按用户授权,保存配置-->
+		<action name="SaveEPDBAuthorityConfigByuserAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigByuser">
+		  <result name="message" type="json"></result>
+		</action>
+		<!-- 试卷库授权按角色授权,未选择课程，保存配置-->
+		<action name="SaveEPDBAuthorityConfigByuserSelectnonecourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigByuserSelectnonecourse">
+		  <result name="message" type="json"></result>
+		</action>
+		<!-- 试卷库授权按角色授权,选择课程,保存配置-->
+		<action name="SaveEPDBAuthorityConfigByuserSelectcourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigByuserSelectcourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		
+		<!-- 试卷库授权按机构授权,查询权限-->
+		<action name="GetAuthorizedEPDBBydepartmentAction" class="ExamPaperDBAction" method="GetAuthorizedEPDBBydepartment">
+		</action>
+		<!-- 试卷库授权按机构授权,保存配置-->
+		<action name="SaveEPDBAuthorityConfigBydepartmentAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigBydepartment">
+		  <result name="message" type="json"></result>
+		</action>
+		<!-- 试卷库授权按机构授权,未选择课程，保存配置-->
+		<action name="SaveEPDBAuthorityConfigBydepartmentSelectnonecourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigBydepartmentSelectnonecourse">
+		  <result name="message" type="json"></result>
+		</action>
+		<!-- 试卷库授权按机构授权,选择课程,保存配置-->
+		<action name="SaveEPDBAuthorityConfigBydepartmentSelectcourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigBydepartmentSelectcourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		
+		<!-- 试卷库授权按成员类型授权,查询权限-->
+		<action name="GetAuthorizedEPDBBymembertypeAction" class="ExamPaperDBAction" method="GetAuthorizedEPDBBymembertype">
+		</action>
+		<!-- 试卷库授权按成员类型授权,保存配置-->
+		<action name="SaveEPDBAuthorityConfigBymembertypeAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigBymembertype">
+		  <result name="message" type="json"></result>
+		</action>
+	
+		<!-- 试卷库授权按成员类型授权,未选择课程，保存配置-->
+		<action name="SaveEPDBAuthorityConfigBymembertypeSelectnonecourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigBymembertypeSelectnonecourse">
+		  <result name="message" type="json"></result>
+		</action>
+		<!-- 试卷库授权按成员类型授权,选择课程,保存配置-->
+		<action name="SaveEPDBAuthorityConfigBymembertypeSelectcourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigBymembertypeSelectcourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 试卷库授权按教学班级授权,查询权限-->
+		<action name="GetAuthorizedEPDBByteachingclassAction" class="ExamPaperDBAction" method="GetAuthorizedEPDBByteachingclass">
+		</action>
+		<!-- 试卷库授权按教学班级授权,保存配置-->
+		<action name="SaveEPDBAuthorityConfigByteachingclassAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigByteachingclass">
+		  <result name="message" type="json"></result>
+		</action>
+		<!-- 试卷库授权按班级授权,未选择课程，保存配置-->
+		<action name="SaveEPDBAuthorityConfigByteachingclassSelectnonecourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigByteachingclassSelectnonecourse">
+		  <result name="message" type="json"></result>
+		</action>
+		<!-- 试卷库授权按班级授权,选择课程,保存配置-->
+		<action name="SaveEPDBAuthorityConfigByteachingclassSelectcourseAction" class="ExamPaperDBAction" method="SaveEPDBAuthorityConfigByteachingclassSelectcourse">
+		  <result name="message" type="json"></result>
+		</action>
+		
+		
+		<!-- 删除试卷库，单条数据 -->
+		<action name="EPDBDeleteAction" class="ExamPaperDBAction" method="EPDBDelete">
+			  <result name="message" type="json"></result>
+		</action>
+		
+		<!-- 批量删除试卷库 -->
+		<action name="EPDBBulkDeleteAction" class="ExamPaperDBAction" method="EPDBBulkDelete">
+			  <result name="message" type="json"></result>
+		</action>
+		
+		<!--修改试卷库，试卷库分类配置信息获取 -->
+		<action name="EPDBSortConfigAction" class="ExamPaperDBAction" method="EPDBSortConfig">
+			  <result name="message" type="json"></result>
+		</action>
+		<!--修改试卷库，试卷库信息保存 -->
+		<action name="EPDBModifyAction" class="ExamPaperDBAction" method="EPDBModify">
+			  <result name="message" type="json"></result>
+		</action>
+		<action name="EPDBSelectByCurseIdAction" class="ExamPaperDBAction" method="EPDBSelectByCurseId">
+			  <result name="message" type="json"></result>
+		</action>
+		<!-- 删除试卷，单条数据 -->
+		<action name="PaperDeleteAction" class="ExamPaperDBAction" method="PaperDelete">
+			  <result name="message" type="json"></result>
+		</action>
+		<action name="PaperBulkDeleteAction" class="ExamPaperDBAction" method="PaperBulkDelete">
+			  <result name="message" type="json"></result>
+		</action>
+		<action name="PaperModifyAction" class="ExamPaperDBAction" method="PaperModify">
+			  <result name="message" type="json"></result>
+		</action>
+		
+		<action name="EDBPGetByCourseAndUseage" class="ExamPaperDBAction" method="SelectEDBPByCourseAndUsage">
+		</action>
+	</package>
+</struts>

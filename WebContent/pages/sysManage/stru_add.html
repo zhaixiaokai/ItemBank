@@ -1,0 +1,122 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<title></title>
+<link type="text/css" href="../css/tree.css" rel="stylesheet">
+<link type="text/css" href="../css/MainFrame.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+#act_divLine {
+	margin-top: 5px;
+	background: url(../source/divLine.gif);
+	width: 784px;
+}
+
+#functionTable {
+	margin-top: 20px;
+	font-size: 12px
+}
+</style>
+<script language=jscript>
+function ChangeStatus(o)
+{
+	if (o.parentNode)
+	{
+		if (o.parentNode.className == "Opened")
+		{
+			o.parentNode.className = "Closed";
+			var source=event.srcElement;
+			source.src="../source/ar.png";
+		}
+		else
+		{
+			o.parentNode.className = "Opened";
+			var source=event.srcElement;
+			source.src="../source/ad.png";
+		}
+	}
+}
+
+
+</script>
+</head>
+<body>
+	<div id="act_top">
+		<a href="#">系统管理</a>&nbsp;&gt;&gt;&nbsp;<a href="#">组织机构管理</a>&nbsp;&gt;&gt;&nbsp;部门管理
+	</div>
+	<table id="act_divLine" height="4px" width="700px" border="0"
+		cellspacing="0" cellpadding="0">
+		<tr>
+			<td style="border: 0"></td>
+		</tr>
+	</table>
+	<div>
+		<table width="700px" border="0" id="functionTable">
+
+			<tr>
+				<td><a href="#">添加子节点</a></td>
+				<td><a href="#">添加前向同级节点</a></td>
+				<td><a href="#">添加后向同级节点</a></td>
+				<td><a href="#">删除节点</a></td>
+				<td><a href="#">剪切节点</a></td>
+				<td><a href="#">修改节点信息</a></td>
+			</tr>
+		</table>
+		<!-- this is a tree demo by xiaokai  -->
+		<!-- 
+  <div class="TreeMenu">
+<ul>
+   <li class="Opened"><img class=s src="../source/ad.png" onclick="javascript:ChangeStatus(this);"><a href="#">信息与通信学院</a>
+   <ul>
+	    <li class="Opened"><img class=s src="../source/ad.png" onclick="javascript:ChangeStatus(this);"><a href="#">通信工程</a>
+		    <ul>
+		    	<li class="Opened"><img class=s src="../source/ad.png" onclick="javascript:ChangeStatus(this);"><a href="#">Chidren</a>
+			      	<ul>
+			       		<li class="Child"><img class=s src="../source/2.gif"><a href="#">child 1</a></li>
+			       		<li class="Child"><img class=s src="../source/2.gif"><a href="#">child 2</a></li>
+						<li class="Child"><img class=s src="../source/2.gif"><a href="#">child 3</a></li>
+						<li class="Child"><img class=s src="../source/2.gif"><a href="#">child 4</a></li>
+						<li class="Child"><img class=s src="../source/2.gif"><a href="#">child 5</a></li>
+						<li class="Child"><img class=s src="../source/2.gif"><a href="#">child 6</a></li>
+						<li class="Child"><img class=s src="../source/2.gif"><a href="#">child 7</a></li>
+			      	</ul>
+		      	</li>
+		      	
+			</ul>
+		</li>
+		
+	</ul>
+	</li>
+</ul>
+</div>
+  -->
+		<div onclick="openAll();">全部展开</div>
+		<div class="TreeMenu" style="width: 700px">
+			<ul id="ul">
+				<li class="Opened"><img class=s src="../source/ad.png"
+					onclick="javascript:ChangeStatus(this);"><a href="#">信息与通信学院</a>
+					<ul>
+						<li class="Child"><img class=s src="../source/2.gif"><a
+							href="#">通信工程</a></li>
+						<li class="Child"><img class=s src="../source/2.gif"><a
+							href="#">电子科学技术</a></li>
+					</ul></li>
+				<li class="Opened"><img class=s src="../source/ad.png"
+					onclick="javascript:ChangeStatus(this);"><a href="#">计算机学院</a>
+					<ul>
+						<li class="Child"><img class=s src="../source/2.gif"><a
+							href="#">计算机科学技术</a></li>
+						<li class="Child"><img class=s src="../source/2.gif"><a
+							href="#">网络技术</a></li>
+					</ul></li>
+			</ul>
+		</div>
+
+	</div>
+	<div id="bottom"></div>
+
+</body>
+</html>

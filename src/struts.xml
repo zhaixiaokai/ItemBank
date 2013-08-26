@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.objectFactory" value="spring"/>
+	
+	<include file="struts-xiaokai.xml"/>
+	<include file="struts-LiJuan.xml"/>
+	<include file="struts-HuangJu.xml"/>
+	<include file="struts-WuZeXi.xml"/>
+	<include file="struts-Kangjiepeng.xml"/>
+	<package name="default" extends="struts-default" namespace="/">
+		<!-- login -->
+		<action name="loginAction" class="loginAction" method="execute">
+ 			<result name="success">/login/HomePage.jsp</result>
+			<!--<result name="login">/login/login.jsp</result> -->
+		</action>
+		<!-- 添加课程信息 -->
+		<action name="addSubAction" class="addSubAction" method="DataToBase">
+			<result name="success">/login/welcome.jsp</result>
+			<result name="error">/teachingManage/addSub1.jsp</result>
+		</action>
+		<!-- 修改密码 -->
+		<action name="updatePswAction" class="pswAction" method="update">
+		
+		</action>
+
+		
+		<action name="treeOperateAction" class="treeOperateAction" method="execute">
+			
+		</action>
+		
+	<!-- 退出登录 -->
+		<action name="LogoutAction" class="logOutAction" method="logout">
+		
+		</action>	
+
+	</package>
+</struts>

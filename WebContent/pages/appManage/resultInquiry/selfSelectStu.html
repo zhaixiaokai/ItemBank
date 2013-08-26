@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../../css/MainFrame.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/table.css"/>
+<style type="text/css">
+#act_divLine{margin-top:5px; background:url(../../source/divLine.gif);width:784px; margin-left:20px;}
+</style>
+</head>
+
+<body>
+    <div id="act_top"><a href="#">应用管理</a>&nbsp;&gt;&gt;&nbsp;<a href="#">成绩查询</a>&nbsp;&gt;&gt;&nbsp;学生自主成绩查询&nbsp;&gt;&gt;&nbsp;成绩列表</div>
+    <table id="act_divLine" height="4px" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+        	<td style="border:0"></td>
+        </tr>
+    </table>
+	<div class="div_style2">
+		<table  align="left" style="font-size:12px" width="700px" height=50px>
+			<tr >
+				<td width="20" style="border:0"><img src="../image/refer.gif" width="20" height="18" /></td>
+				<td width="50" style="border:0">查询条件：</td>
+				<td width="100" style="border:0">学生班级：			  
+				  <select name="select4">
+                    <option>--选择班级--</option>
+                    <option value="1班">1班</option>
+                    <option value="2班">2班</option>
+                    <option value="3班">3班</option>
+                    <option value="4班">4班</option>
+                                    </select></td>
+				<td width="100" style="border:0">班内序号：		      
+				  <select name="select5">
+                    <option>--选择班内序号--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                                    </select></td>
+				<td width="100" style="border:0">选择学期：			  
+				  <form id="form3" name="form3" method="post" action="">
+				    <label>
+				    <select name="select3">
+                      <option selected="selected">--选择学期--</option>
+                      <option value="2012-2013秋学期">2012-2013秋学期</option>
+                      <option value="2011-2012春学期">2011-2012春学期</option>
+                      <option value="2011-2012秋学期">2011-2012秋学期</option>
+                      <option value="2010-2011春学期">2010-2011春学期</option>
+                      <option value="2010-2011秋学期">2010-2011秋学期</option>
+                      <option value="2009-2010春学期">2009-2010春学期</option>
+                      <option value="2009-2010秋学期">2009-2010秋学期</option>
+                      <option value="2008-2009春学期">2008-2009春学期</option>
+                      <option value="2008-2009秋学期">2008-2009秋学期</option>
+                                                            </select>
+				    </label>
+			      </form>
+			    </td>
+				<td width="20" style="border:0"><input type=button id="button" name="button" value="查询" style="background:url(../image/trbg.gif)"></td>
+			</tr>		
+		</table>
+    <div id="act_content">
+  <table width="100%" class="tableList">
+      <tr class="tr1">
+	    <td>课程编号</td>
+        <td>序号</td>
+        <td>考生姓名</td>
+		<td>课程名称</td>
+        <td>课程学分</td>
+		<td>开课学期</td>
+        <td>考试时间</td>
+		<td>考试成绩</td>
+      </tr>
+    <tr>
+      <td>080001</td>
+      <td>1</td>
+      <td>赵</td>
+	  <td>大学英语</td>
+	  <td>3</td>
+	  <td>2008-2009秋学期</td>
+      <td>2009年1月6日</td>
+	  <td>85</td>
+    </tr>
+	<tr>
+      <td>080002</td>
+      <td>2</td>
+      <td>赵</td>
+	  <td>C++程序设计</td>
+	  <td>3.5</td>
+	  <td>2008-2009秋学期</td>
+      <td>2009年1月7日</td>
+	  <td>88</td>
+    </tr>
+	<tr>
+      <td>080003</td>
+      <td>3</td>
+      <td>赵</td>
+	  <td>电子电路基础</td>
+	  <td>4</td>
+	  <td>2008-2009秋学期</td>
+      <td>2009年1月8日</td>
+	  <td>92</td>
+    </tr>
+	<tr>
+      <td>080004</td>
+      <td>4</td>
+      <td>赵</td>
+	  <td>通信原理</td>
+	  <td>5</td>
+	  <td>2008-2009秋学期</td>
+      <td>2009年1月10日</td>
+	  <td>94</td>
+    </tr>
+  </table>
+    <table>
+        <tr><td style="border:0" >
+                <a href="selectSub.html">&nbsp;1&nbsp;</a>
+                <a href="courseList2.html">&nbsp;2&nbsp;</a>
+                <a href="#">&nbsp;3&nbsp;</a>
+                <a href="#">&nbsp;4&nbsp;</a>
+                <a href="#">&nbsp;5&nbsp;</a>
+                <a href="courseList2.html">&nbsp;下一页 ></a>
+                &nbsp;&nbsp;共50页&nbsp;&nbsp;
+                &nbsp;&nbsp;
+                <a href="selectSub.html" class="page">首页</a>
+                &nbsp;&nbsp;
+                <a href="#" class="page">末页</a>
+                &nbsp;&nbsp;
+                到第
+                <input type="text" size="1">页
+                &nbsp;&nbsp;
+                <input type="button" value="确认" onclick="certainPage" style="font-size:12px;">
+        </td></tr>
+    </table>
+    <div>
+</body>
+</html>

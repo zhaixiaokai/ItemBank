@@ -1,0 +1,146 @@
+@CHARSET "UTF-8";
+.button{
+	border:1px solid #7373B9;
+	padding:2px 2px 0px 2px;margin:4px;border-width:1px 3px 1px 3px;
+	font-size: 12px;color:#ffffff;
+	background:url(../../source/bg_3.gif);}
+input.button{
+ 	background:url(../../source/bg_3.gif);
+ 	border:1px solid #7373B9;padding:2px 2px 0px 2px;
+	margin:4px;border-width:1px 3px 1px 3px;font-size: 12px;color: #ffffff;
+	 }
+a:visited {color: black}
+a:active {color: black}
+a:hover {color:blue}
+a{ 
+	text-decoration:none;
+	color:black;
+	font-size:12px;
+	}
+#divLine{margin-top:5px; background:url(../../source/divLine.gif);width:784px; margin-left:20px;}
+.div_style1{
+	 margin-left:40px; margin-right:40px; height:600px; width:700px;
+}
+.div_style2{
+	margin-top:10px; margin-left:40px; margin-right:40px; width:700px;
+	font-size:12px;
+}
+.div_style3{
+	margin-top:10px; margin-left:40px; margin-right:40px; width:700px;
+	font-size:12px;border: 0;
+}
+.div_style4{
+	margin-left:40px; margin-right:40px; width:700px;
+	font-size:12px;border: 0;
+}
+.button1{
+	background:url(image/trbg.gif);
+	font-size:12px;
+}
+
+legend{
+	color: #7373B9;
+	font-weight:bold;
+	padding:5px;
+}
+fieldset{
+	border-top: 1px solid #B8B8DC;
+	border-right: 1px solid #B8B8DC;
+	border-bottom: 1px solid #B8B8DC;
+	border-left: 1px solid #B8B8DC;
+	width: 720px;
+ 	margin-top: 10px;
+	margin-left:10px;
+	margin-right:10px; 
+}
+textarea{ border:1px solid #7373B9;font-size:12px;font-family: Verdana, Arial, Helvetica, sans-serif;}
+input.text{border:1px solid #7373B9;font-size:12px;font-family: Verdana, Arial, Helvetica, sans-serif;height:18px}
+.red{color: #f00;}
+.table1{
+	border-top: 1px solid #7373B9;
+	border-right: 1px solid #7373B9;
+	border-bottom: 1px solid #7373B9;
+	border-left: 1px solid #7373B9;
+}
+.pagehead{
+	/*height: 20px; font-style: normal; font-variant: normal; font-weight: bold; font-size: 16px;letter-spacing: 2px; text-align: middle; border-top: 2px solid #ff7300; padding-left: 10px; background-color: #f0f0f0;text-align:center;*/
+	background:url(../../source/bg_3.gif);
+	padding:5px;
+	text-align:left;
+	color:#FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	height: 19px;
+	font-style: normal; font-variant: normal; font-weight: bold; font-size: 12px;letter-spacing: 2px; padding-left: 10px; 
+}
+
+select{
+	font-size:12px;
+}
+
+.tablestyle1{
+	border:0px;
+}
+.tablestyle1 td{
+	border:0px;
+}
+/* #bottom {
+	BACKGROUND: url(../images/img/menu_bottom_bg.gif) no-repeat; HEIGHT: 80px
+} */
+#treebody {
+	BORDER-RIGHT: #154b76 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND: #70a4cf; PADDING-BOTTOM: 10px; BORDER-LEFT: #154b76 1px solid; PADDING-TOP: 5px
+}
+#treeL1 A:link {
+	DISPLAY: block; FONT-SIZE: 9pt; BACKGROUND: url(../image/bg.jpg);  HEIGHT: 24px; TEXT-DECORATION: none
+}
+#treeL1 A:visited {
+	DISPLAY: block; FONT-SIZE: 9pt; BACKGROUND: url(../image/bg.jpg);  HEIGHT: 24px; TEXT-DECORATION: none
+}
+ 
+#treeL1 A:hover {
+	FONT-WEIGHT: bold; COLOR: #000000
+}
+
+
+
+#treeL2 A:link {
+	DISPLAY: block; FONT-SIZE: 9pt; BACKGROUND: #d9e7ec;  HEIGHT: 24px; TEXT-DECORATION: none
+}
+#treeL2 A:visited {
+	DISPLAY: block; FONT-SIZE: 9pt; BACKGROUND:  #d9e7ec; HEIGHT: 24px; TEXT-DECORATION: none
+}
+
+#treeL2 A:hover {
+	FONT-WEIGHT: bold; BACKGROUND: #d1d2ff; COLOR: #000000
+}
+
+#treeL3 A:link {
+	DISPLAY: block; FONT-SIZE: 9pt; BACKGROUND:  #d9e7ec;  HEIGHT: 24px; TEXT-DECORATION: none
+}
+#treeL3 A:visited {
+	DISPLAY: block; FONT-SIZE: 9pt; BACKGROUND:  #d9e7ec; HEIGHT: 24px; TEXT-DECORATION: none
+}
+
+#treeL3 A:hover {
+	FONT-WEIGHT: bold; BACKGROUND: #d1d2ff; COLOR: #000000
+}
+
+#treeL4 A:link {
+	DISPLAY: block; FONT-SIZE: 9pt; BACKGROUND:  #d9e7ec;  HEIGHT: 24px; TEXT-DECORATION: none
+}
+#treeL4 A:visited {
+	DISPLAY: block; FONT-SIZE: 9pt; BACKGROUND:  #d9e7ec; HEIGHT: 24px; TEXT-DECORATION: none
+}
+
+#treeL4 A:hover {
+	FONT-WEIGHT: bold; BACKGROUND: #d1d2ff; COLOR: #000000
+}
+
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; HEIGHT: 16px
+}
+
+
+#A1 SPAN {margin-left: 20px;}
+ #A2 SPAN {margin-left: 40px;}
+  #A3 SPAN {margin-left: 60px;}
+

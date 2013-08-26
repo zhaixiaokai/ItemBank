@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+	  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	  
+	  <!-- 教材管理的Action的Bean -->
+	<bean id="TeachingMaterialAction" class="net.ib.util.action.TeachingMaterialAction">
+		<!-- 依赖注入TeachingMaterialService组件 -->
+		<property name="teachingMaterialService" ref="TeachingMaterialService"></property>
+	</bean>
+	
+	<!-- 课程管理的Action的Bean -->
+	<bean id="CurseAction" class="net.ib.util.action.CurseAction">
+		<!-- 依赖注入CurseService组件 -->
+		<property name="curseService" ref="CurseService"></property>
+	</bean>
+	
+	<!-- 开课班级成员管理的Action的Bean -->
+	<bean id="TeachingClassMemberAction" class="net.ib.util.action.TeachingClassMemberAction">
+		<!-- 依赖注入TeachingClassMemberservice组件 -->
+		<property name="teachingClassMemberService" ref="TeachingClassMemberService"></property>
+	</bean>
+	
+	<!--=====================================serviceBean======================================-->
+	<!-- 教材管理的Bean -->
+	<bean id="TeachingMaterialService" class="net.ib.util.service.impl.TeachingmaterialServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	
+	<!-- 课程管理的Bean -->
+	<bean id="CurseService" class="net.ib.util.service.impl.CurseServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	
+	<!-- 开课班级成员管理的Bean -->
+	<bean id="TeachingClassMemberService" class="net.ib.util.service.impl.TeachingClassMemberServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	
+	
+	  
+	 <bean id="CourseAction" class="net.ib.util.action.CourseAction" scope="prototype">
+	<!--查询课程  -->
+	</bean>
+	
+	<bean id="DaoImpl" class=" net.ib.util.dao.DaoImpl" scope="prototype">
+	<!--dao  -->
+	</bean>
+</beans>

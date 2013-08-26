@@ -1,0 +1,23 @@
+<license.License>
+  <macAddressLimited>unlimited</macAddressLimited>
+  <macAddress>38-59-F9-9C-DE-97</macAddress>
+  <ipAddressLimited>unlimited</ipAddressLimited>
+  <ipAddress>192.168.1.2</ipAddress>
+  <userCountLimited>unlimited</userCountLimited>
+  <userCount>20000</userCount>
+  <expirationLimited>limited</expirationLimited>
+  <expiration>2016-10-30</expiration>
+  <customerNameLimited>unlimited</customerNameLimited>
+  <customerName>北京邮电大学</customerName>
+  <productNameLimited>unlimited</productNameLimited>
+  <productName>试题库管理系统</productName>
+  <productVersionLimited>unlimited</productVersionLimited>
+  <productVersion>2.x</productVersion>
+  <createDate>2012-11-07</createDate>
+  <organization>北京平易软件</organization>
+  <signatuer>K/whCS4eZl4kCthKvd33J0tK8tpIM+l/JVXJmCOn7QJTsPVHo86CC2iIFrFFtHmOa4S6zKdQ3FVv&#xd;
+NytOsN5RUK1VyjihbeyO3QLNPM9erU1Pd4DwAjUkXnKkkcSo3FcoeGDLkxnkOLLNX2xW6EsVJvP8&#xd;
+bE4FRSVZALW5BUdDdPZcMGm+5yqxuCksXZNpvWc9rv93oVZnoTGAd2dHTa2hsxBDCx6HvbEEVUyN&#xd;
+4E90EEMKBPieLqC6I5kO7L5Z6C9iBmH0F2u+/mCi+Cfc+QcThfZjaKe/hINPYzPzl0GFYgHeOh7+&#xd;
+iBG8CUSGAOgTPiQdAe1Aw1Mgy6MU0OAnVQiV2Q==</signatuer>
+</license.License>

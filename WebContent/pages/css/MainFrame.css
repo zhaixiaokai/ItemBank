@@ -1,0 +1,45 @@
+/* CSS Document */
+
+body{ color:#000; font-size:12px;leftmargin="0" rightmargin="0" bottommargin="0";margin: 0;background-color: #edf1f6;}/* 之所以设置背景颜色是因为只有IE支持html标签中的filter */
+html{
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#d6e4ef,endColorStr=#ffffff);
+	overflow-x:hidden;/*滚动条*/
+}
+a{ color:#000; text-decoration:none;}
+.bottom{ background:url(../source/bg_8.gif); height:40px; text-align:center; padding-top:0px;width: 1024px;color:#687f96 }
+
+
+#act_top{ margin-top:50px; font-size:12px; margin-left:20px; margin-right:20px;width:780px}
+#act_content{ margin-top:50px; margin-left:40px; margin-right:40px; width:700px}/*椤甸潰鍐呭鍗犵敤绌洪棿*/
+#act_title{font-size:24px;text-align:center;width:780px}/*椤甸潰鏍囬*/
+#act_inf{ margin-top:10px;font-size:12px; text-align:center;width:780px}/*椤甸潰淇℃伅*/
+#act_main{margin-top:30px; font-size:14px; line-height:30px; width:780px}/*涓婚鍐呭*/
+#act_content_height{ margin-top:40px; margin-left:40px; margin-right:40px; width:984px;height:600px;}/**/
+
+#act_top2{ margin-top:50px; font-size:12px; margin-left:20px; margin-right:20px;width:984px}
+#act_content2{ margin-top:10px; margin-left:40px; margin-right:40px; width:700px}/*top-margin   20px*/
+#act_title2{font-size:24px;text-align:center;width:984px}/*椤甸潰鏍囬*/
+#act_inf2{ margin-top:10px;font-size:12px; text-align:center;width:984px}/*椤甸潰淇℃伅*/
+#act_main2{margin-top:30px; font-size:14px; line-height:30px; width:888px}/*涓婚鍐呭*/
+
+
+
+.banner a{text-decoration:none; color:#51bfe0}
+.banner A:hover{font-size:23;COLOR:   #C03;TEXT-DECORATION:none;}
+.banner a:link {color: #000} 
+.banner a:visited {color: #000} 
+.banner{background:url(../source/header_little.jpg) no-repeat;}
+
+.left_body a{text-decoration:none; color:#51bfe0}
+.left_body A:hover{font-size:23;COLOR:#C03;TEXT-DECORATION:none;}
+.left_body a:link {color: #687f96} /* 未访问的链接*/ 
+.left_body a:visited {color: #687f96} /* 已访问的链接*/
+
+.right_body a{text-decoration:none; color:#51bfe0}
+.right_body A:hover{font-size:23;COLOR:#C03;TEXT-DECORATION:none;}
+.right_body a:link {color: #687f96} /* 未访问的链接*/ 
+.right_body a:visited {color: #687f96} /* 已访问的链接*/
+
+.left_title{ color:#fff;background:url(../source/bg_3.gif) repeat-x; height:22px;line-height:22px;border:solid 1px #206292; padding-left:9px; margin-bottom:8px;font-weight:bold;}/* 左侧标题样式 */
+
+#act_divLine{margin-top:5px; background:url(../source/divLine.gif);width:784px; margin-left:20px;}

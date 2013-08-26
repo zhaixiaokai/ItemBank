@@ -1,0 +1,73 @@
+.tableList{
+	border:0;
+	border-top-color:#ACD6FF;
+	border-collapse:collapse; 
+	margin-top:20px;
+	width:700px;
+}
+.tableList td{
+	border-collapse:collapse;
+	border:solid 1px #ACD6FF;
+	border-top:#ACD6FF;
+	text-align:center;
+	font-size:12px
+}
+.tableList tr{ height:30px;}/*表格每行的高度*/
+.tr1{
+	background:url(../examM/image/trbg.gif);
+	font-size:12px;
+}/*表第一行样式*/
+.tr3{
+	
+	vertical-align:top;
+}/*表格第三行的格式*/
+
+.tableList td p{
+	margin-left: 10px;
+	text-align:left;
+
+}
+/*表中一列中各项的样式*/
+.button{
+	background:#fff;border:1px solid #7373B9;
+	padding:2px 2px 0px 2px;margin:4px;border-width:1px 3px 1px 3px;
+	font-size: 12px;color: #66B3FF;}
+	
+.tableConstWidth{
+	width:700px;
+}
+
+.tableListNoWidth{
+	border:1;
+	border-top-color:#ACD6FF;
+	border-collapse:collapse; 
+	margin-top:20px;
+	width:945px;
+}
+.tableListNoWidth td{
+	border-collapse:collapse;
+	border:solid 1px #ACD6FF;
+	border-top:#ACD6FF;
+	text-align:center;
+	font-size:12px
+}
+.tableListNoWidth tr{ height:30px;}/*表格每行的高度*/
+
+
+/* table list 左侧对齐 */
+
+.tableListleft{
+	border:0;
+	border-top-color:#ACD6FF;
+	border-collapse:collapse; 
+	margin-top:20px;
+	width:700px;
+}
+.tableListleft td{
+	border-collapse:collapse;
+	border:solid 1px #ACD6FF;
+	border-top:#ACD6FF;
+	text-align:left;
+	font-size:12px
+}
+.tableListleft tr{ height:30px;}/*表格每行的高度*/

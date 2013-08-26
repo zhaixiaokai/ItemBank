@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="xiaokai" extends="struts-default" namespace="/">
+	<!-- 联动的Action -->
+		<!-- 通过教材选择章节的Action -->
+		<action name="ChapterSelectByMaterialAction" class="TeachMaterialInfoAction" method="getChapterByMaterial">
+		</action>
+		
+		<!-- 通过章节选择知识点的Action -->
+		<action name="KnowledgeSelectByCurseAction" class="TeachMaterialInfoAction" method="getKnowledgeByChapter">
+		</action>
+		
+		<!-- 通过专业选择课程的Action -->
+		<action name="CurseSelectBySpecialFieldAction" class="CurseAction" method="getCurseBySpecialFieldId">
+		</action>
+	<!-- 联动完 -->
+	<!-- 页面加载后台数据的Action -->	
+		<!-- 从后台获取表格数据翻页的Action -->
+		<action name="GetTableDataAction" class="TableDataAction" method="CreateDataTableJson">
+		</action>
+		
+		<!-- 从后台通过专业Id获取教学班级表格数据(翻页)的Action -->
+		<action name="TeachingClassTableDataSelectByFieldIdAction" class="TableDataAction" method="GetTeachingClassTableDataByFieldId">
+		</action>
+		
+		<!-- 获取通过课程以及试卷用途选择符合条件的试题库的Action -->
+		<action name="ItemBankGetByCourseAndUseage" class="ItembankAction" method="SelectItemBankByCourseAndUsage">
+		</action>
+		
+		<!-- 获取教师机构数据Action -->	
+		<action name="TeacherDepartmentGetTreeDataAction" class="TreeDataAction" method="getTeacherDepartmentTreeData">
+		</action>
+		<!-- 获取功能树形结构数据的Action -->
+		<action name="FunctionGetTreeDataAction" class="TreeDataAction" method="getFunctionTreeData">
+		</action>
+		
+		<!-- 获取学生机构数据的Action -->
+		<action name="StudentDepartmentGetTreeDataAction" class="TreeDataAction" method="getStudentDepartmentTreeData">
+		</action>
+		
+	<!-- 页面加载后台数据的Action完 -->
+	<!-- 系统选项 -->
+		<!-- 获取难度选项的Action -->
+		<action name="GetDifficultyOptionAction" class="SystemOptionAction" method="GetDifficultySelect">
+		</action>
+		<!-- 获取试卷用途选项的Action -->
+		<action name="GetPaperUseOptionAction" class="SystemOptionAction" method="GetPaperUseSelect">
+		</action>
+		<!-- 获取试题类型选项的Action -->
+		<action name="GetQuesUseOptionAction" class="SystemOptionAction" method="GetQuesUseSelect">
+		</action>		
+		<!-- 获取教师机构结构列表的Action -->
+		<action name="TeacherDepartmentOptionsGetAction" class="SystemOptionAction" method="GetTeacherDepartmentSelect">
+		</action>
+		
+		<!-- 获取学院专业结构数据列表的Action -->
+		<action name="SchoolStructureOptionsGetAction" class="SystemOptionAction" method="GetSchoolStructureSelect">
+		</action>
+
+		<!-- 通过机构Id选择该机构下教师列表的Action -->
+		<action name="TeacherSelectByDepartmentId" class="SystemOptionAction" method="GetTeacherListByDepartmentIdSelect">
+		</action>	
+		
+		<!-- 通过课程Id获取该课程教材列表的Action -->
+		<action name="TeachingMaterialGetByCurseId" class="SystemOptionAction" method="GetTeachingMaterialByCurseIdSelect">
+		</action>	
+		
+		<!-- 获取字典项选择下拉框中选项值的Action -->
+		<action name="GetDataDicOption" class="SystemOptionAction" method="GetDataDicSelect">
+		</action>
+	<!-- 教学班级 -->
+		<!-- 添加教学班级的Action -->
+		<action name="TeachingClassAddAction" class="TeachingClassAction" method="InsertTeachingClass">
+		</action>	
+		
+		<!-- 删除教学班级的Action -->
+		<action name="TeachingClassDeleteAction" class="TeachingClassAction" method="DeleteTeachingClass">
+		</action>
+		
+		<!-- 修改教学班级的Action -->
+		<action name="TeachingClassModifyAction" class="TeachingClassAction" method="ModifyTeachingClass">
+		</action>
+		
+		<!-- 修改教学班级的Action -->
+		<action name="TeachingClassBulkDeleteAction" class="TeachingClassAction" method="BulkDeleteTeachingClass">
+		</action>	
+	<!--  -->
+	<!-- 知识点 -->
+		<!-- 添加知识点 -->
+		<action name="KnowledgePointAddAction" class="KnowledgePointAction" method="addKnowledgePoint">
+		</action>	
+		<!-- 删除知识点 -->
+		<action name="KnowledgePointDeleteAction" class="KnowledgePointAction" method="deleteKnowledgePoint">
+		</action>		
+		<!-- 修改知识点 -->
+		<action name="KnowledgePointUpdateAction" class="KnowledgePointAction" method="updateKnowledgePoint">
+		</action>	
+		<!-- 批量删除知识点 -->
+		<action name="KnowledgePointBulkDeleteAction" class="KnowledgePointAction" method="bulkDeleteKnowledgePoint">
+		</action>	
+		<!-- 获取课程所对应知识点的Action -->
+		<action name="KnowledgePointTableDataSelectByFieldIdAction" class="TableDataAction" method="getKnowledgePointByCurseId">
+		</action>			
+	<!-- 配置项 -->
+		<!-- 添加配置项 -->
+		<action name="ConfigOptionAddAction" class="ConfigOptionAction" method="AddConfigOption">
+		</action>
+		
+		<!-- 获取配置项数据表Json数据 -->	
+		<action name="ConfigOptionTableDataGetAction" class="TableDataAction" method="GetConfigOptionTableData">
+		</action>
+		
+		<!-- 通过Id删除配置项Action -->	
+		<action name="ConfigOptionDeleteAction" class="ConfigOptionAction" method="DeleteConfigOption">
+		</action>	
+		
+		<!-- 更新配置项Action -->	
+		<action name="ConfigOptionUpdateAction" class="ConfigOptionAction" method="UpdateConfigOption">
+		</action>	
+		
+		<!-- 批量删除配置项Action -->	
+		<action name="ConfigOptionBulkDeleteAction" class="ConfigOptionAction" method="BulkDeleteConfigOption">
+		</action>	
+	<!-- 配置项完 -->	
+	<!-- 字典项 -->	
+		<!-- 字典项数据操作的Action -->
+		<action name="DataDicAddAction" class="DataDicAction" method="AddDataDic">
+		</action>
+		<!-- 获取字典项DataTable表格中数据的Action -->
+		<action name="DataDicTableDataGetAction" class="TableDataAction" method="DataDicDataGet">
+		</action>
+		<!-- 删除字典项的Action -->
+		<action name="DataDicDeleteAction" class="DataDicAction" method="DeleteDataDic">
+		</action>
+		<!-- 修改字典项的Action -->
+		<action name="DataDicUpdateAction" class="DataDicAction" method="UpdateDataDic">
+		</action>
+		<!-- 批量删除字典项的Action -->
+		<action name="DataDicBulkDeleteAction" class="DataDicAction" method="BulkDeleteDataDic">
+		</action>
+	<!-- 字典项完 -->
+	
+	<!-- 加载模板Action -->
+		<action name="TemplateGetAction" class="TemplateAction" method="TemplateGetFunc">
+		</action>
+	<!-- 模板Action完 -->
+
+	<!-- 试题上传、验证 -->
+		<action name="QuestionUploadAction" class="QuestionAction" method="uploadQuestionFile">
+		<param name="savePath">/pages/examM</param>
+		</action>	
+	<!-- 试题上传、验证结束 -->
+
+	<!-- 组卷的Action -->
+		<action name="PaperCreateAutoAction" class="PaperCreateAutoAction" method="autoPaper">
+		</action>
+	<!-- 组卷的Action结束 -->
+	<!-- 知识点id列表获取知识点具体信息 -->
+		<action name="KPInfoGetByKPId" class="ConfigOptionAction" method="getKPInfoByKPId"></action>
+	<!--  -->
+	<!-- 查询多个试题库中的试题信息 -->
+		<action name="QuesGetByIBIds" class="TableDataAction" method="getQuesByIds"></action>
+	<!--  -->
+	<!-- 查询手动组卷时已经添加的试题 -->
+		<action name="AddedQuesGetByIBIds" class="TableDataAction" method="getAddedQuesByIds"></action>
+	<!--  -->
+	<!-- 根据难度、题型、知识点在多个试题库中查询试题 -->
+		<action name="QuesMultiGetByDifTypKP" class="TableDataAction" method="multiGetQuesByDifTypKP"></action>
+	
+	<!-- 手动组卷提交组卷Action -->
+		<action name="AutoPaperOnHandAction" class="PaperCreateAutoAction" method="autoPaperOnHand"></action>
+
+	<!-- 添加试卷 -->
+		<action name="ExamPaperAddAction" class="ExamPaperAction" method="addPaper"></action>
+	<!-- 测试 -->
+	<action name="TestUploadAction" class="TestUploadAction" method="Function">
+	</action>
+	<action name="XiaokaiAction" class="TestUploadAction" method="Func"></action>
+	<action name="DocGetAction"	class="DocGetAction" method="getDocFromDb"></action>
+	<action name="YuiTreeDataGetAction" class="YuiTreeDataGetAction" method="getData"></action>
+	</package>
+</struts>

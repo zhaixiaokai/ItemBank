@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+body{
+	padding-top:0px;
+	margin:0px;
+}
+.button{
+	background:#fff;border:1px solid #7373B9;
+	padding:2px 2px 0px 2px;margin:4px;border-width:1px 3px 1px 3px;
+	font-size: 12px;color: #66B3FF;}
+input.button{	border:1px solid #7373B9;
+	padding:2px 2px 0px 2px;margin:4px;border-width:1px 3px 1px 3px;
+	font-size: 12px;color:#ffffff;
+	background:url(../../source/bg_3.gif);
+	 }
+a:visited {color: black}
+a:active {color: black}
+a:hover {color:blue}
+a{ 
+	text-decoration:none;
+	color:black;
+	font-size:12px;
+	}
+html{
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#d6e4ef,endColorStr=#ffffff);
+	overflow-x:hidden;
+}
+#divLine{margin-top:5px; background:url(../../source/divLine.gif);width:784px; margin-left:20px;}
+.div_style1{
+	 margin-left:20px; margin-right:40px; height:600px; width:700px;
+}
+.div_style2{
+	margin-top:10px; margin-left:40px; margin-right:40px; height:600px; width:720px;
+	font-size:12px;
+}
+.button1{
+	background:url(image/trbg.gif);
+	font-size:12px;
+}
+
+legend{
+	color: #7373B9;
+	font-weight:bold;
+	padding:5px;
+}
+fieldset{
+	border-top: 1px solid #B8B8DC;
+	border-right: 1px solid #B8B8DC;
+	border-bottom: 1px solid #B8B8DC;
+	border-left: 1px solid #B8B8DC;
+	margin-top: 10px;
+	margin-left:10px;
+	margin-right:10px;
+}
+textarea{ border:1px solid #7373B9;font-size:12px;font-family: Verdana, Arial, Helvetica, sans-serif;}
+input.text{border:1px solid #7373B9;font-size:12px;font-family: Verdana, Arial, Helvetica, sans-serif;height:18px}
+.red{color: #f00;}
+.table1{
+	border-top: 1px solid #7373B9;
+	border-right: 1px solid #7373B9;
+	border-bottom: 1px solid #7373B9;
+	border-left: 1px solid #7373B9;
+}
+.pagehead{
+	/*height: 20px; font-style: normal; font-variant: normal; font-weight: bold; font-size: 16px;letter-spacing: 2px; text-align: middle; border-top: 2px solid #ff7300; padding-left: 10px; background-color: #f0f0f0;text-align:center;*/
+	background:url(../../source/bg_3.gif);
+	padding:5px;
+	text-align:left;
+	color:#FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	height: 20px;
+	font-style: normal; font-variant: normal; font-weight: bold; font-size: 16px;letter-spacing: 2px; padding-left: 10px; 
+}
+

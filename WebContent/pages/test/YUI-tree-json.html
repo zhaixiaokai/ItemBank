@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">  
+<html>  
+<head>  
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">  
+<title>Menu-Style TreeView Design</title>  
+  
+<style type="text/css">  
+/*margin and padding on body element   
+  can introduce errors in determining   
+  element position and are not recommended;   
+  we turn them off as a foundation for YUI   
+  CSS treatments. */   
+body {   
+    margin:0;   
+    padding:0;   
+}   
+</style>  
+  
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/fonts/fonts-min.css" />  
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/treeview/assets/skins/sam/treeview.css" />  
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>  
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/treeview/treeview-min.js"></script>  
+  
+<!-- Dependencies -->  
+<script src="http://yui.yahooapis.com/2.6.0/build/yahoo/yahoo-min.js"></script>  
+  
+<!-- Source file -->  
+<script src="http://yui.yahooapis.com/2.6.0/build/json/json-min.js"></script>  
+  
+<!--begin custom header content for this example-->  
+<!--bring in the folder-style CSS for the TreeView Control-->  
+<link rel="stylesheet" type="text/css" href="http://developer.yahoo.com/yui/build/treeview/assets/treeview-menu.css" />  
+  
+<!-- Some custom style for the expand/contract section-->  
+<style>  
+#expandcontractdiv {border:1px dotted #dedede; background-color:#EBE4F2; margin:0 0 .5em 0; padding:0.4em;}   
+#treeDiv1 { background: #fff; padding:1em; margin-top:1em; }   
+</style>  
+<!--end custom header content for this example-->  
+    <script type="text/javascript" src="../js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.rotate.js"></script>
+<script type="text/javascript">
+var	data	=	"";
+function	GetData(){
+	$.ajax( {
+		type : "post",
+		dataType : "json",
+		async : false,
+		url : "YuiTreeDataGetAction",
+		success : function(result) {
+			alert(result);
+			data=result;
+		},
+		error:function(){
+		}
+	});
+}
+function	treeNodeClick(o){
+	alert(o);
+}
+</script>
+</head>  
+<body class=" yui-skin-sam">  
+<h1>Menu-Style TreeView Design</h1>  
+  
+<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->  
+  
+<!-- markup for expand/contract links -->  
+<div id="expandcontractdiv">  
+    <a id="collapse" href="#">Collapse all</a>  
+</div>  
+  
+<div id="treeDiv1"></div>  
+  
+<script type="text/javascript">  
+//an anonymous function wraps our code to keep our variables   
+//in function scope rather than in the global namespace:   
+GetData();
+(function() {   
+    var tree; //will hold our TreeView instance   
+       
+    function treeInit() {   
+           
+        YAHOO.log("Example's treeInit function firing.", "info", "example");   
+           
+        //Hand off ot a method that randomly generates tree nodes:   
+        buildRandomTextNodeTree();   
+           
+        //handler for collapsing all nodes   
+        YAHOO.util.Event.on("collapse", "click", function(e) {   
+            YAHOO.log("Collapsing all TreeView  nodes.", "info", "example");   
+            tree.collapseAll();   
+            YAHOO.util.Event.preventDefault(e);   
+        });   
+    }   
+       
+    //This method will build a TreeView instance and populate it with   
+    //between 3 and 7 top-level nodes   
+    function buildRandomTextNodeTree() {   
+       
+/*         var jsonTree = '{"label":"all", "children":[';   
+                jsonTree += '{"label":"bar", "children":[';   
+                    jsonTree += '{"label":"37628"},';   
+                    jsonTree += '{"label":"quux", "children":[';   
+                        jsonTree += '{"label":"179"},';   
+                        jsonTree += '{"label":"7"}';   
+                    jsonTree += ']},';   
+                jsonTree += '{"label":"1025"}';   
+                jsonTree += ']}';   
+            jsonTree += ']}';    */
+/*             var jsonTree='[{"id":"3D355605B32946FF957EEDE26179879E","sno":"1","node_path":"0001","node_series":"1","pid":"0","label":"学院","tree_id":"jibenfenleitixi","expanded":"true","children":[{"id":"992E663CFDEB40D0943D5B6BA39DB907","sno":"1","node_path":"0001.0001","node_series":"2","pid":"3D355605B32946FF957EEDE26179879E","label":"信通院","tree_id":"jibenfenleitixi","expanded":"true","children":[{"id":"0485D95B113942BEBEE3B4A4F487BEDA","sno":"1","node_path":"0001.0001.0001","node_series":"3","pid":"992E663CFDEB40D0943D5B6BA39DB907","label":"信通专业1","tree_id":"jibenfenleitixi"},{"id":"FBB32086D8D54C5CA54391FC96371533","sno":"2","node_path":"0001.0001.0002","node_series":"3","pid":"992E663CFDEB40D0943D5B6BA39DB907","label":"信通专业2","tree_id":"jibenfenleitixi"},{"id":"CC2CE482B12D42FA9503F0614C8F789E","sno":"3","node_path":"0001.0001.0003","node_series":"3","pid":"992E663CFDEB40D0943D5B6BA39DB907","label":"信通专业3","tree_id":"jibenfenleitixi"}]},{"id":"839DB68DB7E749759374117F3C5B2C9D","sno":"2","node_path":"0001.0002","node_series":"2","pid":"3D355605B32946FF957EEDE26179879E","label":"电子院","tree_id":"jibenfenleitixi","expanded":"true","children":[{"id":"300363CFB51C4F708AD8B28E6F5BB985","sno":"1","node_path":"0001.0002.0001","node_series":"3","pid":"839DB68DB7E749759374117F3C5B2C9D","label":"信通专业4","tree_id":"jibenfenleitixi"},{"id":"D3FF8D11F32641A1B78807226FF3E1F7","sno":"2","node_path":"0001.0002.0002","node_series":"3","pid":"839DB68DB7E749759374117F3C5B2C9D","label":"电子专业2","tree_id":"jibenfenleitixi"},{"id":"08457A02DA2B4C3D95F007B30F3D91D4","sno":"3","node_path":"0001.0002.0003","node_series":"3","pid":"839DB68DB7E749759374117F3C5B2C9D","label":"电子专业1","tree_id":"jibenfenleitixi"}]},{"id":"5FBA22B152544D88A3701A0A1DACF7A0","sno":"9","node_path":"0001.0003","node_series":"2","pid":"3D355605B32946FF957EEDE26179879E","label":"计算机学院","tree_id":"jibenfenleitixi","expanded":"true","children":[{"id":"078C13CF7EF24F109441B8F54B8A98FB","sno":"1","node_path":"0001.0003.0001","node_series":"3","pid":"5FBA22B152544D88A3701A0A1DACF7A0","label":"计算机科学技术","tree_id":"jibenfenleitixi"},{"id":"7A628E50DD4F4467B2B440034787E893","sno":"2","node_path":"0001.0003.0002","node_series":"3","pid":"5FBA22B152544D88A3701A0A1DACF7A0","label":"工业设计","tree_id":"jibenfenleitixi"}]}]}]'
+            var treeObject = YAHOO.lang.JSON.parse(jsonTree);    */
+        //instantiate the tree:   
+        tree = new YAHOO.widget.TreeView("treeDiv1", data);    
+        tree.draw();   
+        tree.subscribe('clickEvent',function(oArgs) {
+            treeNodeClick(oArgs.node.data.id);
+        });
+    }   
+    YAHOO.util.Event.onDOMReady(treeInit);   
+       
+})();
+  
+</script>  
+  
+<!--END SOURCE CODE FOR EXAMPLE =============================== -->  
+  
+  
+<!--MyBlogLog instrumentation-->  
+</body>  
+</html>  

@@ -1,0 +1,19 @@
+.NewTitle{background-image:url(../source/blue.png);}
+#footer{clear:both;}
+#suojin2{ text-indent:2em;}
+#firstDiv{height:350px; width:780px;}	
+#secondDiv{height:330px; width:780px;}	
+
+.menu li{padding-left:0px; line-height:20px; list-style-image:url(../source/dian.gif); left:30px;}
+
+#container{margin:60 auto;width:800px;}
+.news{
+	float:right;
+	width:750px;
+}
+.news_title{
+	border-bottom: dashed 1px #84888a;
+	width:750px;
+	margin-bottom:12px;
+}
+.menuli{padding-left:0px; line-height:20px; list-style-image:url(../source/dian.gif); left:30px;}

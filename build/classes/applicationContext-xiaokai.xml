@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+	  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	  
+
+	<!-- 登录Action的bean -->  
+	<bean id="loginAction" class="net.ib.util.action.LoginAction"
+		scope="prototype">
+		<!-- 依赖注入业务逻辑组件 -->
+		<property name="testService" ref="testService" />
+	</bean>
+	<!-- 修改密码 -->
+	<bean id="pswAction" class="net.ib.util.action.PswAction">
+		<property name="userPswService" ref="UserPswService"></property>
+	</bean>
+	<!-- 定义对树的操作使用的action -->
+	<bean id="treeOperateAction" class="net.ib.util.action.TreeOperateAction" >
+		<!-- 依赖业务逻辑组件为treeOperateService -->
+		<property name="TreeOperate" ref="treeOperateService" />
+	</bean>	
+	
+	<!-- 定义教材→课程→知识点动态选择使用的Bean -->
+	<bean id="TeachMaterialInfoAction" class="net.ib.util.action.TeachMaterialInfoAction" >
+	</bean>	
+	<!-- 定义通过专业选择课程的Bean -->
+	<bean id="CurseAction" class="net.ib.util.action.CurseAction" >
+	</bean>	
+	
+	<!-- 定义测试YUI组件获取Datatable显示数据的action -->
+	<bean id="TableDataAction" class="net.ib.util.action.TableDataAction" >
+		<property name="CDTJFYS" ref="CreateDataTableJsonForYuiService" />
+		<property name="dao" ref="Dao" />
+	</bean>	
+	
+	<!-- 定义获取系统选项（SystemOption）的Bean -->
+	<bean id="SystemOptionAction" class="net.ib.util.action.SystemOptionAction" >
+		<property name="SysOptionServcie" ref="SystemOptionService" />
+	</bean>
+	
+	<!-- 定义通过选择条件选取符合查询试题库 的Bean -->
+	<bean id="ItembankAction" class="net.ib.util.action.ItembankAction" >
+		<property name="IGS" ref="ItembankGetService" />
+	</bean>
+	
+	<!-- 定义对教学班级进行操作的Bean -->
+	<bean id="TeachingClassAction" class="net.ib.util.action.TeachingClassAction" >
+		<property name="teachingClassServ" ref="TeachingClassService" />
+	</bean>
+	
+	<!-- 定义对配置项进行操作的Bean -->
+	<bean id="ConfigOptionAction" class="net.ib.util.action.ConfigOptionAction" >
+		<property name="COS" ref="ConfigOptionService"></property>
+	</bean>	
+	
+	<!-- 定义对试题进行操作的Bean -->
+	<bean id="QuestionAction" class="net.ib.util.action.QuestionsAction">
+		<property name="questionService" ref="QuestionService"></property>
+		
+	</bean>
+	<!-- 系统中涉及到获取树结构数据Json用途的Action的Bean -->
+ 	<bean id="TreeDataAction" class="net.ib.util.action.TreeDataAction">
+		<property name="treeDataService" ref="TreeDataService"></property>
+	</bean>
+	<!-- 数据字典的Bean -->
+	<bean id="DataDicAction" class="net.ib.util.action.DataDicAction">
+		<property name="dataDicService" ref="DataDicService"></property>
+	</bean>
+	<!-- 值项管理的Action -->
+	<bean id="ValueOptionAction" class="net.ib.util.action.ValueOptionAction">
+		<!-- 依赖注入ValueOptionService组件 -->
+		<property name="valueOptionService" ref="ValueOptionService"></property>
+	</bean>
+	<!-- 知识点管理的Action的Bean -->
+	<bean id="KnowledgePointAction" class="net.ib.util.action.KnowledgePointAction">
+		<!-- 依赖注入KnowledgePointService组件 -->
+		<property name="knowledgePointService" ref="KnowledgePointService"></property>
+	</bean>
+	<!-- 获取试题模板的Action对应的bean -->
+	<bean id="TemplateAction" class="net.ib.util.action.TemplateAction">
+		<!-- 依赖注入templateService组件 -->
+		<property name="templateService" ref="TemplateService"></property>
+	</bean>
+	<!--=====================================serviceBean======================================-->
+	<!-- 定义测试YUI产生Datatable需要的Json的Bean -->
+	<bean id="CreateDataTableJsonForYuiService" class="net.ib.util.service.impl.CreateDataTableJsonForYuiServiceImpl" >
+		<property name="dao" ref="Dao" />
+		<property name="service" ref="Service" />
+	</bean>		
+	
+	<!-- 定义Service的Bean -->
+	<bean id="Service" class="net.ib.util.service.impl.ServiceImpl" >
+	</bean>	
+		
+	<!-- 定义获取系统选项service的Bean -->
+	<bean id="SystemOptionService" class="net.ib.util.service.impl.SystemOptionServiceImpl" >
+		<!-- 依赖注入dao组件 -->
+		<property name="dao" ref="Dao" />
+		<!-- 依赖注入service组件 -->
+		<property name="service" ref="Service" />
+	</bean>	
+	
+	<!-- 定义通过条件查询试题库service的Bean -->
+	<bean id="ItembankGetService" class="net.ib.util.service.impl.ItembankGetServiceImpl" >
+		<!-- 依赖注入dao组件 -->
+		<property name="dao" ref="Dao" />
+		<!-- 依赖注入service组件 -->
+		<property name="service" ref="Service" />
+	</bean>	
+	
+	<!-- 定义教学班级service的Bean -->
+	<bean id="TeachingClassService" class="net.ib.util.service.impl.TeachingClassServiceImpl" >
+		<!-- 依赖注入dao组件 -->
+		<property name="dao" ref="Dao" />
+	</bean>	
+	
+	<!-- 定义配置项service的Bean -->
+	<bean id="ConfigOptionService" class="net.ib.util.service.impl.ConfigOptionServiceImpl" >
+		<!-- 依赖注入dao组件 -->
+		<property name="dao" ref="Dao" />
+		<!-- 依赖注入service组件 -->
+		<property name="service" ref="Service" />
+	</bean>	
+	
+	<!-- 定义试题service的Bean -->	
+	<bean id="QuestionService" class="net.ib.util.service.impl.QuestionServiceImpl">
+		<property name="fs" ref="FileService"></property>
+			<property name="service" ref="Service" />
+	</bean>
+	<!-- 定义系统中用到树结构数据来源的Bean -->
+	<bean id="TreeDataService" class="net.ib.util.service.impl.TreeDataServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	<!-- 定义字典项的Service的Bean -->
+	<bean id="DataDicService" class="net.ib.util.service.impl.DataDicServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	<!-- 定义值项管理的Service的Bean -->
+	<bean id="ValueOptionService" class="net.ib.util.service.impl.ValueOptionServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	<!-- 知识点管理的Bean -->
+	<bean id="KnowledgePointService" class="net.ib.util.service.impl.KnowledgePointServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	<!-- 模板加载的bean -->
+	<bean id="TemplateService" class="net.ib.util.service.impl.TemplateServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	
+	<!-- 组卷的Bean -->
+	<bean id="PaperCreateAutoAction" class="net.ib.util.action.PaperCreateAutoAction">
+		<!-- 依赖注入PaperCreateAutoService组件 -->
+		<property name="paperCreateAutoService" ref="PaperCreateAutoService"></property>
+	</bean>
+	<bean id="PaperCreateAutoService" class="net.ib.util.service.impl.PaperCreateAutoServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	<!-- 组卷的Bean结束 -->
+	
+	<bean id="UserPswService" class="net.ib.util.service.impl.UserPswServiceImpl">
+		<property name="dao" ref="Dao"></property>
+	</bean>
+	<!--================================以下为测试========================================-->
+	<bean id="TestUploadAction" class="test.TestUploadAction">
+		<property name="fs" ref="FileService"></property>
+		<property name="service" ref="Service"></property>
+	</bean>
+	<bean id="DocGetAction" class="test.DocGetAction">
+		<property name="service" ref="Service"></property>
+	</bean>
+	<bean id="YuiTreeDataGetAction" class="test.YuiTreeDataGetAction">
+		<property name="dao" ref="Dao"></property>
+		<property name="service" ref="Service"></property>
+	</bean>
+	<!-- 试卷管理 -->
+	<bean id="ExamPaperAction" class="net.ib.util.action.examPaperAction">
+		<property name="paperService" ref="PaperService"></property>
+	</bean>
+	<bean id="PaperService" class="net.ib.util.service.impl.PaperServiceImpl">
+		<property name="dao" ref="Dao"></property>
+		<property name="service" ref="Service"></property>
+	</bean>
+	<bean id="logOutAction" class="net.ib.util.action.LogoutAction">
+
+	</bean>
+	
+</beans>

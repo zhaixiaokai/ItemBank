@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+	  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+<!--分类体系  -->
+	<bean id="SortAction" class="net.ib.util.action.SortAction" scope="prototype">
+	<property name="SortAction" ref="SortService"></property>
+	</bean>
+	
+	<!--分类体系实现  -->
+	<bean id="SortService" class="net.ib.util.service.impl.SortServiceImpl" scope="prototype">
+		<property name="di" ref="Dao"></property>
+		<property name="service" ref="Service"></property>
+	</bean>
+	
+	<bean id="DaoImpl" class=" net.ib.util.dao.DaoImpl" scope="prototype">
+	<!--dao  -->
+	</bean>
+	
+
+	
+<!--试题库管理 -->
+	<bean id="ExamSystemManageAction" class="net.ib.util.action.ExamSystemManageAction" scope="prototype">
+	<property name="ExamSystemManageAction" ref="ExamSystemManageService"></property>
+	</bean>
+	
+<!-- 试题库管理 -->
+	<bean id="ExamSystemManageService" class="net.ib.util.service.impl.ExamSystemManageServiceImpl" scope="prototype">
+		<property name="di" ref="Dao"></property>
+		<property name="service" ref="Service"></property>
+	</bean>
+	
+	
+<!--试题管理 -->
+	<bean id="QuesManageAction" class="net.ib.util.action.QuesManageAction" scope="prototype">
+	<property name="QuesManageActionService" ref="QuesManageService"></property>
+	</bean>
+	
+<!-- 试题管理实现 -->
+	<bean id="QuesManageService" class="net.ib.util.service.impl.QuesManageServiceImpl" scope="prototype">
+		<property name="di" ref="Dao"></property>
+			<property name="service" ref="Service" />
+	</bean>
+	
+</beans>

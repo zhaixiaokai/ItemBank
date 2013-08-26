@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="sturts.i18n.encoding" value="UTF-8" />
+
+	<package name="HuangJu" extends="struts-default" namespace="/">
+	</package>
+	
+	
+	<package name="json-HJ" extends="json-default" namespace="/">
+	
+								<!--教师信息批量上传、学生信息批量上传 -->
+		<action name="TeacherUploadAction" class="TeacherUploadAction" method="doUploadAction">
+			<!-- 文件保存路径 参数-->
+			<param name="savePath">/pages</param>
+			<!-- <result name="success" type="json">
+				<param name="contentType">text/html</param>
+				<param name="includeProperties">message</param>
+			</result> -->
+		</action>
+		
+		<action name="StudentUploadAction" class="StudentUploadAction" method="StudentUpload">
+			<param name="savePath">/pages</param>
+		</action>
+									<!--END  -->
+									<!--成绩管理  -->
+		<action name="StudentScoreAction" class="StudentScoreAction" method="StudentScoreUpload">
+			<param name="savePath">/pages</param>
+		</action>
+		<action name="StudentScoreOnTeachingClassGetAction" class="TableDataAction" method="StudentScoreOnTeachingClassGet">
+		</action>
+		<action name="StudentScoreDeleteOnTeachingClassAction" class="StudentScoreAction" method="DeleteStudentScoreOnTeachingClass">
+		</action>
+		<action name="StudentScoreUpdateOnTeachingClassAction" class="StudentScoreAction" method="StudentScoreUpdateOnTeachingClass">
+		</action>
+		<action name="StudentScoreOnStudentSelfGetAction" class="TableDataAction" method="StudentScoreOnStudentSelf">
+		</action>
+		<action name="StudentScoreOnClassGetAction" class="TableDataAction" method="StudentScoreOnClass">
+		</action>
+		<action name="StudentScoreDeleteOnClassAction" class="StudentScoreAction" method="DeleteStudentScoreOnClass">
+		</action>
+		<action name="StudentScoreUpdateOnClassAction" class="StudentScoreAction" method="UpdateStudentScoreOnClass">
+		</action>
+									
+									
+									
+									<!-- 教师管理信息 -->
+									
+		<action name="TeacherAddAction" class="TeacherAction" method="AddTeacher">
+		</action>
+		<!-- 获取教师表格中数据的Action -->
+		<action name="TeacherListDataGetAction" class="TableDataAction" method="TeacherListDataGet">
+		</action>
+		<!-- 删除教师的Action -->
+		<action name="TeacherDeleteAction" class="TeacherAction" method="DeleteTeacher">
+		</action>
+		<!-- 批量删除教师的Action -->
+		<action name="TeacherBulkDeleteAction" class="TeacherAction" method="BulkDeleteTeacher">
+		</action>
+		<!-- 修改教师信息的Action -->
+		<action name="TeacherUpdateAction" class="TeacherAction" method="UpdateTeacher">
+		</action>
+									<!-- 授权管理 -->
+									
+		<action name="RoleAuthorityAction" class="AuthorityAction" method="RoleAuthority">
+		</action>
+		<action name="PresentRoleAuthorityGetAction" class="AuthorityAction" method="PresentRoleAuthorityGet">
+		</action>
+		<action name="DepartmentAuthorityAction" class="AuthorityAction" method="DepartmentAuthority">
+		</action>
+		<action name="PresentDepartmentAuthorityGetAction" class="AuthorityAction" method="PresentDepartmentAuthorityGet">
+		</action>
+		<action name="UserAuthorityAction" class="AuthorityAction" method="UserAuthority">
+		</action>
+		<action name="CheckUserNumberAction" class="AuthorityAction" method="CheckUserNumber">
+		</action>
+		<action name="PresentUserAuthorityGetAction" class="AuthorityAction" method="PresentUserAuthorityGet">
+		</action>
+		<action name="UserMemberAuthorityAction" class="AuthorityAction" method="UserMemberAuthority">
+		</action>
+		<action name="PresentUserTypeAuthorityGetAction" class="AuthorityAction" method="PresentUserTypeAuthorityGet">
+		</action>
+
+									<!-- 学生管理信息 -->
+		
+		<!--添加学生Action  -->
+		<action name="StudentAddAction" class="StudentAction" method="AddStudent">
+		</action>
+		<!--删除学生Action  -->
+		<action name="StudentDeleteAction" class="StudentAction" method="DeleteStudent">
+		</action>
+		<!--批量删除学生Action  -->
+		<action name="StudentBulkDeleteAction" class="StudentAction" method="BulkDeleteStudent">
+		</action>
+		<!-- 获取教师机构结构列表的Action -->
+		<action name="StudentDepartmentOptionsGetAction" class="SystemOptionAction" method="GetStudentDepartmentSelect">
+		</action>
+		<!-- 获取教师表格中数据的Action -->
+		<action name="StudentListDataGetAction" class="TableDataAction" method="StudentListDataGet">
+		</action>
+		<!-- 修改教师信息的Action -->
+		<action name="StudentUpdateAction" class="StudentAction" method="UpdateStudent">
+		</action>
+
+									<!--角色管理信息 -->
+		<!--添加角色 的Action -->						
+		<action name="RoleAddAction" class="RoleAction" method="AddRole">
+		</action>
+		<!-- 删除角色的Action -->
+		<action name="RoleDeleteAction" class="RoleAction" method="DeleteRole">
+		</action>
+		<!-- 获取角色表格中数据的Action -->
+		<action name="RoleDataGetAction" class="TableDataAction" method="RoleDataGet">
+		</action>
+		<!-- 修改角色信息的Action -->
+		<action name="RoleUpdateAction" class="RoleAction" method="UpdateRole">
+		</action>
+		<!-- 批量删除角色的Action -->
+		<action name="RoleBulkDeleteAction" class="RoleAction" method="BulkDeleteRole">
+		</action>
+		
+									<!--角色成员管理  -->
+		<action name="GetRoleList" class="SystemOptionAction" method="GetRoleListSelect">
+		</action> 
+		<action name="AddRoleMemberAction" class="RoleMemberAction"  method="AddRoleMember">
+		</action>
+		<action name="RoleMemberGetAction" class="TableDataAction" method="RoleMemberGet">
+		</action>
+		<action name="RoleMemberDeleteAction" class="RoleMemberAction" method="DeleteRoleMember">
+		</action>
+		<action name="RoleMemberBulkDeleteAction" class="RoleMemberAction" method="BulkDeleteRoleMember">
+		</action>
+		
+									<!--角色成员管理完  -->
+							
+							
+										<!-- 值项 -->
+		<!-- 添加值项 -->
+		<action name="ValueOptionAddAction" class="ValueOptionAction" method="AddValueOption">
+		</action>
+		<!-- 删除值项 -->
+		<action name="DeleteValueOptionAction" class="ValueOptionAction" method="DeleteValueOption">
+		</action>
+		<!-- 更新值项 -->
+		<action name="UpdateValueOptionAction" class="ValueOptionAction" method="UpdateValueOption">
+		</action>
+		<!-- 批量删除值项 -->
+		<action name="BulkDeleteValueOptionAction" class="ValueOptionAction" method="BulkDeleteValueOption">
+		</action>
+		<!-- 获取值项数据的Action -->
+		<action name="ValueOptionTableDataGetAction" class="TableDataAction" method="GetValueOptionByDicId">
+		</action>
+									<!-- 值项完 -->
+
+	</package>
+</struts>

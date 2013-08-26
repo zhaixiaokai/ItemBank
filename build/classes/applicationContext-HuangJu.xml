@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+	  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+								<!--教师管理 -->
+	<bean id="TeacherService" class="net.ib.util.service.impl.TeacherServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+		<!-- 教师添加 接口 -->
+	</bean>
+	<bean id="TeacherAction" class="net.ib.util.action.TeacherAction"
+		scope="prototype">
+	
+		<property name="TeacherService" ref="TeacherService" />
+	</bean>
+						<!--TeacherManage End  -->	
+							
+							<!-- 学生管理 -->
+	<bean id="StudentService" class="net.ib.util.service.impl.StudentServiceImpl">
+		<!-- 学生添加 接口 -->
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	<bean id="StudentAction" class="net.ib.util.action.StudentAction"
+		scope="prototype">
+		<property name="StudentService" ref="StudentService" />
+	</bean>
+						<!-- StudentManage End -->
+							
+							<!--角色管理类 -->
+	<bean id="RoleService" class="net.ib.util.service.impl.RoleServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+		<!-- 角色添加 接口 -->
+	</bean>
+	<bean id="RoleAction" class="net.ib.util.action.RoleAction"
+		scope="prototype">
+		<property name="RoleService" ref="RoleService" />
+	</bean>
+							<!--RoleManage END  -->
+							
+							<!--授权管理 -->
+	<bean id="AuthorityService" class="net.ib.util.service.impl.AuthorityServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+		<!-- 角色添加 接口 -->
+	</bean>
+	<bean id="AuthorityAction" class="net.ib.util.action.AuthorityAction"
+		scope="prototype">
+		<property name="AuthorityService" ref="AuthorityService" />
+	</bean>
+								<!--End  -->
+								
+							<!--角色成员管理类 -->
+	<bean id="RoleMemberService" class="net.ib.util.service.impl.RoleMemberServiceImpl">
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+		<!-- 角色成员添加 接口 -->
+	</bean>
+	<bean id="RoleMemberAction" class="net.ib.util.action.RoleMemberAction"
+		scope="prototype">
+		<property name="RoleMemberService" ref="RoleMemberService" />
+	</bean>
+							<!--RoleManage END  -->
+							
+							<!--教师/学生上传文件并解析  -->
+
+	<bean id="ReadExcel" class="net.ib.util.service.impl.ReadExcelImpl">
+		<!--Excel文件解析 -->
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+
+	<bean id="TeacherUploadAction" class="net.ib.util.action.TeacherUploadAction"
+		scope="prototype">
+		<!--教师信息批量导入+上传文件 -->
+		<property name="ReadExcel" ref="ReadExcel" />
+	</bean>
+	<bean id="StudentUploadAction" class="net.ib.util.action.StudentUploadAction"
+		scope="prototype">
+		<!--学生信息批量导入+上传文件 -->
+		<property name="ReadExcel" ref="ReadExcel" />
+	</bean>
+						<!-- 学生成绩管理 -->
+	<bean id="StudentScoreService" class="net.ib.util.service.impl.StudentScoreServiceImpl">
+		<!--Excel文件解析 -->
+		<!-- 依赖注入Dao组件 -->
+		<property name="dao" ref="Dao"></property>
+		<!-- 依赖注入Service组件 -->
+		<property name="service" ref="Service"></property>
+	</bean>
+	<bean id="StudentScoreAction" class="net.ib.util.action.StudentScoreAction"
+		scope="prototype">
+		<!--学生成绩导入+上传文件 -->
+		<property name="ReadExcel" ref="ReadExcel" />
+		<property name="StudentScoreService" ref="StudentScoreService"/>
+	</bean>
+	
+
+	
+	
+
+</beans>
